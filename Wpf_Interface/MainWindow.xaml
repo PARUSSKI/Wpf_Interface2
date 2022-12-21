@@ -1,0 +1,46 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Interface"
+        xmlns:Properties="clr-namespace:Wpf_Interface.Properties" x:Class="Wpf_Interface.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+
+    <Grid x:Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ToolBar Grid.Column="0" HorizontalAlignment="Left" Margin="0,25,0,334" Width="177">
+            <Button Height="42" Width="44" Margin="0,0,10,0" Click="MenuItem_Click" ToolTip="Изменить цвет окна на голубой">
+                <Image Source="paint.png"></Image>
+            </Button>
+
+            <Button Height="42" Width="44" Margin="0,0,10,0" Click="MenuItem_Click_1" ToolTip="Информация о разработчике">
+                <Image Source="avatar.png"></Image>
+            </Button>
+
+            <Button Height="42" Width="44" Click="MenuItem_Click_2" ToolTip="Закрыть приложение">
+                <Image Source="close.png"></Image>
+            </Button>
+        </ToolBar>
+
+        <Menu  BorderBrush="Navy" BorderThickness="1" Margin="0,0,0,384">
+            <MenuItem Header="_Файл">
+                <MenuItem Header="_Изменить цвет окна" Click="MenuItem_Click" x:Name="changeColor" ToolTip="Изменить цвет окна на голубой"/>
+                <MenuItem Header="_Информация о разработчике" Click="MenuItem_Click_1" ToolTip="Информация о разработчике"/>
+                <Separator />
+                <MenuItem Header="_Закрыть" Click="MenuItem_Click_2" ToolTip="Закрыть приложение"/>
+            </MenuItem>
+        </Menu>
+
+        <StatusBar Margin="0,382,0,0" DockPanel.Dock="Bottom">
+            <TextBlock Text=""  x:Name="statusBarText" />
+        </StatusBar>
+
+    </Grid>
+
+</Window>

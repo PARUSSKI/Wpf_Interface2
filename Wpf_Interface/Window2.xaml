@@ -1,0 +1,40 @@
+﻿<Window x:Class="Wpf_Interface.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Interface"
+        mc:Ignorable="d"
+        Title="Графический редактор" Height="450" Width="800">
+
+    <Grid Margin="0,0,679,403">
+        <InkCanvas Margin="0,0,-684,-397" Name="Canvas">
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes  Height="10" Width="10" x:Name="drAtr"/>
+            </InkCanvas.DefaultDrawingAttributes>
+        </InkCanvas>
+
+        <ComboBox SelectedIndex="0" Margin="9,0,-9,-27" SelectionChanged="ComboBox_SelectionChanged" Name="combobox">
+            <ComboBoxItem Foreground="Black" Content="Черный" />
+            <ComboBoxItem Foreground="Red" Content="Красный" />
+            <ComboBoxItem Foreground="Blue" Content="Синий" />
+            <ComboBoxItem Foreground="Green" Content="Зеленый" />
+        </ComboBox>
+
+        <Slider Margin="9,58,-9,-71" Minimum="1" Maximum="10" ValueChanged="Slider_ValueChanged" Name="slider" >
+
+        </Slider>
+
+        <RadioButton IsChecked="True" Name="radio1" Margin="9,90,7,-111" Checked="radio1_Checked">
+            Рисование
+        </RadioButton>
+        <RadioButton Name="radio2" Margin="9,123,-18,-159" Checked="radio2_Checked">
+            Редактирование
+        </RadioButton>
+        <RadioButton Name="radio3" Margin="9,158,-35,-191" Checked="radio3_Checked">
+            Удаление
+        </RadioButton>
+
+
+    </Grid>
+</Window>

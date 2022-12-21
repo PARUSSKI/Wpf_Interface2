@@ -1,0 +1,94 @@
+﻿<Window x:Class="Wpf_styles.MultiEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_styles"
+        mc:Ignorable="d"
+        Title="MultiEdit" Height="450" Width="802">
+
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="BigTextBoxStyle">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="LittleTextBoxStyle">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                <GradientStop Color="#ffeeee" Offset="0" />
+                <GradientStop Color="#9bc5c3" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Rectangle Fill="#FF82ABA9" Margin="398,-2,400,-5"/>
+
+        <StackPanel Grid.Column="0"  HorizontalAlignment="Left" Width="400" Margin="0,5,0,-5">
+            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Введите текст" Grid.Column="0" HorizontalAlignment="Center"  Margin="0,40,0,0" />
+            <TextBox Text="{Binding ElementName=SecBigTextbox,Path=Text,Mode=TwoWay}" Style="{StaticResource BigTextBoxStyle}" TextChanged="TextBox_TextChanged" x:Name="BigTextbox1" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="46" Width="286"/>
+            
+            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Варианты текста" Grid.Column="0" HorizontalAlignment="Center"  Margin="0,40,0,0" />
+            <TextBox x:Name="LittleTextBox1" Style="{StaticResource LittleTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="22" Width="286">
+                <TextBox.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Red" Offset="1"/>
+                        <GradientStop Color="Blue" Offset="0"/>
+                    </LinearGradientBrush>
+                </TextBox.Foreground>
+            </TextBox>
+
+            <TextBox x:Name="LittleTextBox2" Style="{StaticResource LittleTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="22" Width="286">
+                <TextBox.Foreground>
+                    <RadialGradientBrush  Center="0.4,0.4" SpreadMethod="Reflect">
+                        <GradientStop Color="Violet" Offset="1"/>
+                        <GradientStop Color="Green" Offset="0.5"/>
+                        <GradientStop Color="Yellow" Offset="0"/>
+                    </RadialGradientBrush>
+                </TextBox.Foreground>
+            </TextBox>
+            <TextBox x:Name="LittleTextBox3" Style="{StaticResource LittleTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="22" Width="286">
+                <TextBox.Foreground>
+                    <SolidColorBrush Color="Crimson" />
+                </TextBox.Foreground>
+            </TextBox>
+            <TextBox x:Name="LittleTextBox4" Style="{StaticResource LittleTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="22" Width="286">
+                <TextBox.Foreground>
+                    <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                        <GradientStop Color="Coral" Offset="1"/>
+                        <GradientStop Color="YellowGreen" Offset="0"/>
+                    </LinearGradientBrush>
+                </TextBox.Foreground>
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Margin="400,0,0,0" Width="400">
+            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Введите текст" Grid.Column="0" HorizontalAlignment="Center"  Margin="0,40,0,0" />
+            <TextBox Text="{Binding ElementName=BigTextbox1,Path=Text, Mode=TwoWay}" x:Name="SecBigTextbox" TextChanged="TextBox_TextChanged_1" Style="{StaticResource BigTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="46" Width="286"/>
+            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Варианты текста" Grid.Column="0" HorizontalAlignment="Center"  Margin="0,40,0,0" />
+
+            <TextBox FontFamily="Arial" FontWeight="ExtraBold" x:Name="SecTextBox1" Style="{StaticResource LittleTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="22" Width="286"/>
+            <TextBox FontWeight="Black" FontStyle="Italic" x:Name="SecTextBox2" Style="{StaticResource LittleTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="22" Width="286"/>
+            <TextBox FontWeight="Thin" FontFamily="Arial" x:Name="SecTextBox3" Style="{StaticResource LittleTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="22" Width="286"/>
+            <TextBox FontStyle="Italic" FontFamily="Times New Roman" x:Name="SecTextBox4" Style="{StaticResource LittleTextBoxStyle}" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10,0,0" Height="22" Width="286"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
